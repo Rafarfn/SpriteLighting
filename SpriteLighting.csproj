@@ -81,8 +81,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\CBS\SpriteLighting\Scripts\CameraRenderDepthTexture.cs" />
     <Compile Include="Assets\CBS\SpriteLighting\Scripts\SpriteMimic.cs" />
+    <Compile Include="Assets\CBS\SpriteLighting\Scripts\CameraRenderDepthTexture.cs" />
+    <Compile Include="Assets\CBS\SpriteLighting\Example\Scripts\AnimatorRandomizer.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\CBS\SpriteLighting\Example\Shaders\DepthTest.shader" />

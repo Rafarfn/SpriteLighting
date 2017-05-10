@@ -223,7 +223,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mimicMaterial: {fileID: 2100000, guid: 5d4b7ad14c0bdf949bac5693e19ae501, type: 2}
-  mimicScale: {x: 1, y: 1, z: 1}
   originalRenderer: {fileID: 177439877}
   isStatic: 1
 --- !u!1 &224450641
@@ -477,6 +476,8 @@ GameObject:
   m_Component:
   - component: {fileID: 476605586}
   - component: {fileID: 476605587}
+  - component: {fileID: 476605589}
+  - component: {fileID: 476605588}
   m_Layer: 0
   m_Name: Torch (2)
   m_TagString: Untagged
@@ -540,6 +541,36 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_MaskInteraction: 0
+--- !u!114 &476605588
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 476605585}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 133a4c5ca86ad7240b6779dfb13cbb05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 476605589}
+  frequency: 0.6
+--- !u!95 &476605589
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 476605585}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 27c21917dbd8c384191311fece65a59c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &524804121
 GameObject:
   m_ObjectHideFlags: 0
@@ -580,7 +611,7 @@ Light:
   m_Type: 2
   m_Color: {r: 1, g: 0.94036514, b: 0.6911765, a: 1}
   m_Intensity: 1
-  m_Range: 0.75
+  m_Range: 1.25
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
@@ -1009,7 +1040,7 @@ Light:
   m_Type: 2
   m_Color: {r: 1, g: 0.94036514, b: 0.6911765, a: 1}
   m_Intensity: 1
-  m_Range: 2
+  m_Range: 1.5
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
@@ -4652,6 +4683,8 @@ GameObject:
   m_Component:
   - component: {fileID: 924441974}
   - component: {fileID: 924441975}
+  - component: {fileID: 924441977}
+  - component: {fileID: 924441976}
   m_Layer: 0
   m_Name: Torch (3)
   m_TagString: Untagged
@@ -4715,6 +4748,36 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_MaskInteraction: 0
+--- !u!114 &924441976
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 924441973}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 133a4c5ca86ad7240b6779dfb13cbb05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 924441977}
+  frequency: 0.6
+--- !u!95 &924441977
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 924441973}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 27c21917dbd8c384191311fece65a59c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &1012677668
 GameObject:
   m_ObjectHideFlags: 0
@@ -4868,7 +4931,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mimicMaterial: {fileID: 2100000, guid: 5d4b7ad14c0bdf949bac5693e19ae501, type: 2}
-  mimicScale: {x: 1, y: 1, z: 1}
   originalRenderer: {fileID: 1035206173}
   isStatic: 1
 --- !u!1 &1054794551
@@ -4954,7 +5016,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mimicMaterial: {fileID: 2100000, guid: 5d4b7ad14c0bdf949bac5693e19ae501, type: 2}
-  mimicScale: {x: 1, y: 1, z: 1}
   originalRenderer: {fileID: 1054794553}
   isStatic: 1
 --- !u!1 &1082103003
@@ -11747,7 +11808,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mimicMaterial: {fileID: 2100000, guid: 5d4b7ad14c0bdf949bac5693e19ae501, type: 2}
-  mimicScale: {x: 1, y: 1, z: 1}
   originalRenderer: {fileID: 1116737856}
   isStatic: 0
 --- !u!1 &1130372561
@@ -11899,6 +11959,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1282620139}
   - component: {fileID: 1282620140}
+  - component: {fileID: 1282620142}
+  - component: {fileID: 1282620141}
   m_Layer: 0
   m_Name: Torch
   m_TagString: Untagged
@@ -11962,6 +12024,36 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_MaskInteraction: 0
+--- !u!114 &1282620141
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1282620138}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 133a4c5ca86ad7240b6779dfb13cbb05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 1282620142}
+  frequency: 0.6
+--- !u!95 &1282620142
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1282620138}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 27c21917dbd8c384191311fece65a59c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &1307679091
 GameObject:
   m_ObjectHideFlags: 0
@@ -15242,6 +15334,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1314796409}
   - component: {fileID: 1314796410}
+  - component: {fileID: 1314796412}
+  - component: {fileID: 1314796411}
   m_Layer: 0
   m_Name: Torch (1)
   m_TagString: Untagged
@@ -15305,6 +15399,36 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_MaskInteraction: 0
+--- !u!114 &1314796411
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1314796408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 133a4c5ca86ad7240b6779dfb13cbb05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 1314796412}
+  frequency: 0.6
+--- !u!95 &1314796412
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1314796408}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 27c21917dbd8c384191311fece65a59c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &1328534713
 GameObject:
   m_ObjectHideFlags: 0
@@ -18793,6 +18917,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1444348612}
   - component: {fileID: 1444348613}
+  - component: {fileID: 1444348615}
+  - component: {fileID: 1444348614}
   m_Layer: 0
   m_Name: Torch
   m_TagString: Untagged
@@ -18856,6 +18982,36 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_MaskInteraction: 0
+--- !u!114 &1444348614
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1444348611}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 133a4c5ca86ad7240b6779dfb13cbb05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 1444348615}
+  frequency: 1
+--- !u!95 &1444348615
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1444348611}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 27c21917dbd8c384191311fece65a59c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &1456155974
 GameObject:
   m_ObjectHideFlags: 0
@@ -19106,7 +19262,7 @@ Light:
   m_Type: 2
   m_Color: {r: 1, g: 0.94036514, b: 0.6911765, a: 1}
   m_Intensity: 1
-  m_Range: 1
+  m_Range: 1.25
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
@@ -19228,7 +19384,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mimicMaterial: {fileID: 2100000, guid: 5d4b7ad14c0bdf949bac5693e19ae501, type: 2}
-  mimicScale: {x: 1, y: 1, z: 1}
   originalRenderer: {fileID: 1579128388}
   isStatic: 1
 --- !u!1 &1620628433
@@ -19707,7 +19862,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mimicMaterial: {fileID: 2100000, guid: 5d4b7ad14c0bdf949bac5693e19ae501, type: 2}
-  mimicScale: {x: 1, y: 1, z: 1}
   originalRenderer: {fileID: 1816616687}
   isStatic: 1
 --- !u!1 &1817490248
@@ -19920,7 +20074,7 @@ Light:
   m_Type: 2
   m_Color: {r: 1, g: 0.94036514, b: 0.6911765, a: 1}
   m_Intensity: 1
-  m_Range: 0.75
+  m_Range: 1.25
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
@@ -19999,7 +20153,7 @@ Light:
   m_Type: 2
   m_Color: {r: 1, g: 0.94036514, b: 0.6911765, a: 1}
   m_Intensity: 1
-  m_Range: 0.75
+  m_Range: 1.25
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
@@ -20492,7 +20646,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mimicMaterial: {fileID: 2100000, guid: 5d4b7ad14c0bdf949bac5693e19ae501, type: 2}
-  mimicScale: {x: 1, y: 1, z: 1}
   originalRenderer: {fileID: 2080709749}
   isStatic: 1
 --- !u!1 &2104704289

@@ -15,25 +15,16 @@ namespace CBS
 			/// <summary>
 			/// The material to the copy spriteRenderer.
 			/// </summary>
-			[SerializeField]
-			protected Material mimicMaterial;
+			[SerializeField] protected Material mimicMaterial;
 
-			[SerializeField]
-			protected Vector3 mimicScale = Vector3.one;
-
-			[SerializeField]
-			protected SpriteRenderer originalRenderer;
+			[SerializeField] protected SpriteRenderer originalRenderer;
 			protected SpriteRenderer mimicRenderer;
-
-			protected Transform originalTransform;
-			protected Transform mimicTransform;
-			protected Vector3 displacement = new Vector3(0.0f, 0.0f, 0.15f);
 
 			/// <summary>
 			/// Mark as true if the sprite won't change over time, so the copy will not
 			/// be updated.
 			/// </summary>
-			public bool isStatic = true;
+			[SerializeField] protected bool isStatic = true;
 
 
 			// Use this for initialization
@@ -47,11 +38,11 @@ namespace CBS
 
 				GameObject copyGameObject = new GameObject();
 
-				mimicTransform = copyGameObject.transform;
+				Transform mimicTransform = copyGameObject.transform;
 				mimicTransform.parent = transform;
-				mimicTransform.localScale = mimicScale;
+				mimicTransform.localScale = Vector3.one;
 				mimicTransform.localRotation = Quaternion.identity;
-				mimicTransform.position = originalRenderer.transform.position + displacement;
+				mimicTransform.position = originalRenderer.transform.position;
 
 				mimicRenderer = copyGameObject.AddComponent<SpriteRenderer>();
 				mimicRenderer.material = mimicMaterial;
@@ -61,9 +52,6 @@ namespace CBS
 				{
 					Destroy(this);
 				}
-
-				originalTransform = originalRenderer.transform;
-				mimicTransform = mimicRenderer.transform;
 			}
 
 			void Reset ()
@@ -77,8 +65,6 @@ namespace CBS
 			void LateUpdate ()
 			{
 				mimicRenderer.sprite = originalRenderer.sprite;
-
-				mimicTransform.position = originalTransform.position + displacement;
 			}
 
 		}

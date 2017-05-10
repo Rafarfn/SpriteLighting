@@ -29,8 +29,8 @@ Shader "Custom/Entities"
 			Lighting Off
 			ZWrite Off
 			Blend SrcAlpha OneMinusSrcAlpha
-		
-			Tags { "LightMode" = "ForwardBase" }
+
+			Tags{ "LightMode" = "ForwardBase" }
 
 			CGPROGRAM
 			#pragma vertex vert
@@ -38,6 +38,7 @@ Shader "Custom/Entities"
 			#pragma multi_compile DUMMY PIXELSNAP_ON
 			#pragma multi_compile_fwdbase
 			#include "UnityCG.cginc"
+			#include "Lighting.cginc"
 
 			struct appdata_t
 			{

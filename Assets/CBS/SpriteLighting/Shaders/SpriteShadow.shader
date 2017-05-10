@@ -1,5 +1,4 @@
-﻿
-Shader "Custom/Sprite Shadow" {
+﻿Shader "Custom/Sprite Shadow" {
 	Properties
 	{
 		[PerRendererData] _MainTex ("Sprite Texture", 2D) = "white" {}
@@ -16,7 +15,7 @@ Shader "Custom/Sprite Shadow" {
 		// ForwardAdd needed to get the world space position from point lights with _WorldSpaceLightPos0
 		Tags
 		{ 
-			"Queue"="Transparent" 
+			"Queue"="Transparent-50" 
 			"IgnoreProjector"="True" 
 			"RenderType"="Transparent"
 			"CanUseSpriteAtlas"="True"
@@ -29,7 +28,7 @@ Shader "Custom/Sprite Shadow" {
 			ZWrite Off
 			// Culling off, so it gets renderer even when it is facing away from the camera
 			Cull Off
-			Lighting Off	 
+			Lighting Off
 			Blend SrcAlpha OneMinusSrcAlpha
 
 		CGPROGRAM
@@ -77,7 +76,7 @@ Shader "Custom/Sprite Shadow" {
 				
 				// Recycle the lightPosition to calculate the vertex position
 				lightPos = IN.vertex + lightDirection;
-				lightPos.z -= _ShadowDepth;
+				lightPos.z += _ShadowDepth;
 
 				half distance = clamp(length(lightDirection), 1, _PerspectiveFactor);
 				
