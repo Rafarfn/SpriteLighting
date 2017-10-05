@@ -126,7 +126,7 @@ Shader "Custom/Entities"
 				OUT.vertex = UnityPixelSnap(OUT.vertex);
 	#endif
 
-				// Light direction: as it is for 2D, it is placed at the same z as the vertex
+				// Light direction in that vertex
 				OUT.lightDir = ObjSpaceLightDir(v.vertex);
 
 				// Calculate the rotation matrix per-vertex instead of per-pixel in fragment shader later on
@@ -153,21 +153,34 @@ Shader "Custom/Entities"
 				{
 					discard;
 				}
+				
+				// We are adding in this pass, so defaults to black
+				c = fixed4(0, 0, 0, 0);
 
-				fixed3 rim = fixed3(0, 0, 0);
+				fixed2 rim = fixed2(0, 0);
+				fixed addedAlpha = 0;
 
 				float2 aux = _MainTex_TexelSize.xy;
+				fixed value = 0;
 				aux.y = 0;
-				rim.x -= tex2D(_MainTex, IN.texcoord + aux).a;
-				rim.x += tex2D(_MainTex, IN.texcoord - aux).a;
+				value = tex2D(_MainTex, IN.texcoord + aux).a;
+				rim.x -= value;
+				addedAlpha += value;
+				value = tex2D(_MainTex, IN.texcoord - aux).a;
+				rim.x += value;
+				addedAlpha += value;
 
 				aux = _MainTex_TexelSize.xy;
 				aux.x = 0;
-				rim.y -= tex2D(_MainTex, IN.texcoord + aux).a;
-				rim.y += tex2D(_MainTex, IN.texcoord - aux).a;
+				value = tex2D(_MainTex, IN.texcoord + aux).a;
+				rim.y -= value;
+				addedAlpha += value;
+				value = tex2D(_MainTex, IN.texcoord - aux).a;
+				rim.y += value;
+				addedAlpha += value;
 
 				// Check if any of the neighbours is transparent
-				if (rim.x + rim.y < 4)
+				if (addedAlpha < 4)
 				{
 					// Transform both light's direction and rim's direction to the same space (tangent space)
 					fixed3 light = mul(IN.rotation, IN.lightDir);
